@@ -4,10 +4,14 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
+       <!--<nav class="navbar navbar-expand-sm navbar-info bg-info mt-3 mb-3">-->
+         
+         
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-md-auto align-items-center">
         <li>
-          <%= link_to "投稿", "#", class: "btn btn-primary" %>
+          <%= link_to "投稿", "new_post_path", class: "btn btn-primary" %>
         </li>
         <li>
          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
@@ -15,4 +19,10 @@
       </ul>
     </div>
   </div>
+  
+  <form class="form-inline">
+            <input class="form-control mr-sm-1" type="search">
+            <button class="btn btn-primary" type="submit">ログイン</button>
+        </form>
+  
 </nav>

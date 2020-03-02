@@ -1,6 +1,22 @@
+<% provide(:title, "Home") %>
 
+<!DOCTYPE html>
+<html>
+
+  
+   <body>
 <p>このページは仮のトップページです。</p>
+
+<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %><br>
 <% if user_signed_in? %> 
 <%= link_to "サインアウト", destroy_user_session_path, method: :delete %><br>
 <% end %>
-<%= link_to "仮のボタンです", "#", class: "btn btn-primary" %>
+
+    <div class="col-md-8">
+      <h3>post Feed</h3>
+     <!--  render 'shared/feed' %>-->
+    </div>
+
+</body>
+</html>
+

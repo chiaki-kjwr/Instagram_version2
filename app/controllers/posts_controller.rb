@@ -8,9 +8,8 @@ class PostsController < ApplicationController
 
 
   def show
-    @post
+    @post = Post.new
   end
-  # ==========ここまで追加する==========
 
   def new
     @post = Post.new
@@ -30,7 +29,7 @@ class PostsController < ApplicationController
   end
   
   def destroy
-   @post
+   @post= Post.new(post_params)
     if @post.user == current_user
       flash[:notice] = "投稿が削除されました" if @post.destroy
     else

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Techpitgram</title>
+    <title>Instagram</title>
+        <title><%= yield(:title) %> | Instagram</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +10,7 @@
   </head>
 
   <body>
-    <%# ========== ここから編集する ========== %>
+   
     <div id="wrapper">
        <%= render 'partial/navbar' if current_user %>
 
@@ -19,12 +20,14 @@
        <% if flash[:alert] %>
          <div class="alert alert-danger"><%= flash[:alert] %></div>
        <% end %>
-       <%= yield %>
+       
 
-       <%# ========== partial/footerを追加する ========== %>
+　　　<div class="container">
+        <%= yield %>
+      </div>
+
        <%= render 'partial/footer' %>
     </div>
-    <%# ========== ここまで編集する ========== %>
-
+    
   </body>
 </html>
