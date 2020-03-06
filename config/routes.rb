@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get '/users/:id', to: 'users#show', as: 'user'
+  get "/users/:id", to: "users#show", as: 'user'
 
 
   
