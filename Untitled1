@@ -1,16 +1,21 @@
-<% provide(:title, "MyPage") %>
+show.html
+
+<% provide(:title, @user.name) %>
 
 <div class="profile-wrap">
   <div class="row">
     <div class="col-md-4 text-center">
-     <%= image_tag avatar_url(@user), class: "round-img" %>
+      <%= image_tag avatar_url(@user), class: "round-img" %>
     </div>
     <div class="col-md-8">
       <div class="row">
         <h1><%= @user.name %></h1>
+        
+         <% if @user == current_user %>
+
         <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
         <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
-
+        <% end %>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -34,15 +39,20 @@
             <%= @user.email %>
           </p>
         </div>
+        
+        
+     <!-- <div class="col-md-4">
+   
+       <h3>post (<%= @user.post.count %>)</h3>
+         <ol class="post">
+         <%= render @post %>
+        </ol>
+       
+       <% end %>
+       </div>-->
+          
       <% end %>
       
-     <!----------------->
-      </section>
-    <p><%= @user.profile %></p>
-    <section class="stats">
-      
-     <!----------------->
-     
+     </div>
     </div>
   </div>
-</div>

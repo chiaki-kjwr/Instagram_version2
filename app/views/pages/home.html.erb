@@ -1,19 +1,30 @@
 <% provide(:title, "TopPage") %>
-
-
-<html>
-
+ <html>
+<header>
+    
+</header>
   
    <body>
-<h1>Let's Connect with the world!</h1>
+       
 
+ 
+ <div class = "container" >
+     <h1>Let's Connect with the world!</h1>
+     
+     </div>
+     
+     <div class = "login">
+          <% if user_signed_in? %> 
+        <%= link_to "サインアウト", destroy_user_session_path, method: :delete %><br>
+         <% else %>
+         <%= link_to "ログイン", new_user_session_path %><br>
+         <%= link_to "サインアップ",new_user_registration_path %><br>
+    <% end %>   
+         
+     </div>
 
-<% if user_signed_in? %> 
-<%= link_to "サインアウト", destroy_user_session_path, method: :delete %><br>
-<% end %>
-
-<img src="/assets/drink.jpeg" alt="">
-  
+    <img src="/assets/drink.jpeg" alt="">
+ 
   
     <div class="col-md-8">
       <h3>post Feed</h3>

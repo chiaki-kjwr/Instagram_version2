@@ -27,7 +27,13 @@
             <%= f.label :password_confirmation, "パスワードの確認" %>
             <%= f.password_field :password_confirmation, autofocus: "off", class: "form-control" %>
           </div>
-
+          
+          <div class="form-group">
+            <%= f.label :profile, "自己紹介" %>
+            <%= f.text_area :profile,  class: 'form-control', placeholder: "160文字以内で入力" %> 
+          
+           </div>
+           
           <%= f.submit "変更する", class: "btn btn-primary" %>
         <% end %>
       </div>
