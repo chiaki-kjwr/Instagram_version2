@@ -22,7 +22,15 @@
   
   <form class="form-inline">
             <input class="form-control mr-sm-1" type="search">
+            
+            <% if current_user == nil %>
             <button class="btn btn-primary" type="submit">ログイン</button>
+            <% end %>
+            
+            <% if current_user.present? %>
+             <%= link_to "ログアウト", "/users/sign_out", class: "btn btn-primary",method: :delete %>
+             <% end %>
+             
         </form>
   
 </nav>
