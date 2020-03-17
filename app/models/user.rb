@@ -21,25 +21,23 @@ class User < ApplicationRecord
   #validates :name, presence: true, length: { maximum: 50 }
   #validates :username, presence: true, length: { maximum: 10 }
   #validates :profile, presence: true, length: { maximum: 160 }
-
-=begin 
+  
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
-    #if params[:password].blank? && params[:password_confirmation].blank?
+    if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
       params.delete(:password_confirmation)
     end
     
-    def feed
-    Post.where("user_id = ?", id)
-    end
+    #def feed
+    #Post.where("user_id = ?", id)
+    #nd
 
     result = update_attributes(params, *options)
     clean_up_passwords
     result
   end
-=end
  
 
 end

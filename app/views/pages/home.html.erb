@@ -9,7 +9,15 @@
 
  
  <div class = "container" >
+     
+     <div class = "top-logo">
+      <img src="/assets/logo.png" alt="" width="193" height="130">
+      </div>
+     
+     <div class = "top-messeage">
      <h1>Let's Connect with the world!</h1>
+     
+         
      
      </div>
      
@@ -17,8 +25,8 @@
           <% if user_signed_in? %> 
         <%= link_to "サインアウト", destroy_user_session_path, method: :delete %><br>
          <% else %>
-         <%= link_to "ログイン", new_user_session_path %><br>
-         <%= link_to "サインアップ",new_user_registration_path %><br>
+         <%= link_to "ログイン", new_user_session_path,class: "btn btn-primary"%><br>
+         <%= link_to "登録する",new_user_registration_path,class: "btn btn-primary"%><br>
     <% end %>   
          
      </div>
@@ -29,6 +37,7 @@
     <div class="col-md-8">
       <h3>post Feed</h3>
      <!--  render 'shared/feed' %>-->
+    </div>
     </div>
 
 </body>
